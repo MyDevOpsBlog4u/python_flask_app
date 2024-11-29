@@ -3,7 +3,13 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
-
+resources:
+  repositories:
+  - repository: python_flask_app
+    type: github
+    endpoint: MyFlaskApp23
+    name: MyDevOpsBlog4u/python_flask_app
+    ref: main
 stages:
 - stage: BuildAndDeploy
   displayName: "Build, Test, and Deploy"
@@ -12,7 +18,7 @@ stages:
     displayName: "Build and Test the Application"
     steps:
     - task: Checkout@1      
-    - checkout: git://github.com/MyDevOpsBlog4u/python_flask_app.git@main
+    - checkout: python_flask_app
       displayName: 'Checkout the GitHub repository'
         
     - task: UsePythonVersion@0
