@@ -11,10 +11,10 @@ stages:
   - job: BuildJob
     displayName: "Build and Test the Application"
     steps:
-    - task: Checkout@2
+    - task: Checkout@1
       inputs:
         repository: 'https://github.com/MyDevOpsBlog4u/python_flask_app.git'
-        ref: 'refs/heads/main'
+        ref: 'main'
         clean: true
       displayName: 'Checkout code from GitHub'
     - task: UsePythonVersion@0
@@ -41,7 +41,7 @@ stages:
 
     - task: AzureRmWebAppDeployment@4
       inputs:
-        azureSubscription: 'YourAzureServiceConnection'
+        azureSubscription: ''
         appType: 'webAppLinux'
         WebAppName: 'MyFlaskApp3'
         packageForLinux: '$(Build.ArtifactStagingDirectory)/*.zip'
