@@ -7,7 +7,7 @@ resources:
   repositories:
   - repository: python_flask_app
     type: github
-    endpoint: MyFlaskApp23
+    endpoint: FlaskApp
     name: MyDevOpsBlog4u/python_flask_app
     ref: main
 stages:
