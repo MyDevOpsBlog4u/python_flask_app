@@ -13,7 +13,7 @@ stages:
     steps:
     - task: Checkout@1
       inputs:
-        repository: 'git://github.com/MyDevOpsBlog4u/python_flask_app@main'
+        repository: 'https://github.com/MyDevOpsBlog4u/python_flask_app.git'
         ref: 'main'
         clean: true
       displayName: 'Checkout code from GitHub'
