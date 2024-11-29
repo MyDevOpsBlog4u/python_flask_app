@@ -17,7 +17,6 @@ stages:
   - job: BuildJob
     displayName: "Build and Test the Application"
     steps:
-    - task: Checkout@1      
     - checkout: python_flask_app
       displayName: 'Checkout the GitHub repository'
         
