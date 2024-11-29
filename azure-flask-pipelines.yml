@@ -11,12 +11,10 @@ stages:
   - job: BuildJob
     displayName: "Build and Test the Application"
     steps:
-    - task: Checkout@1
-      inputs:
-        repository: 'https://github.com/MyDevOpsBlog4u/python_flask_app.git'
-        ref: 'main'
-        clean: true
-      displayName: 'Checkout code from GitHub'
+    - task: Checkout@1      
+    - checkout: git://github.com/MyDevOpsBlog4u/python_flask_app.git@main
+      displayName: 'Checkout the GitHub repository'
+        
     - task: UsePythonVersion@0
       inputs:
         versionSpec: '3.x'
